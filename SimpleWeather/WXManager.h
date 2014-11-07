@@ -6,8 +6,23 @@
 //  Copyright (c) 2014 ag07. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+@import Foundation;
+@import CoreLocation;
 
-@interface WXManager : NSObject
+#import <ReactiveCocoa/ReactiveCocoa/ReactiveCocoa.h>
+#import "WXCondition.h"
+
+@interface WXManager : NSObject <CLLocationManagerDelegate>
+
++ (instancetype)shredManager;
+
+@property (nonatomic, strong, readonly) CLLocation *currantLocation;
+@property (nonatomic, strong, readonly) WXCondition *currentCondition;
+@property (nonatomic, strong, readonly) NSArray *hourlyForecast;
+@property (nonatomic, strong, readonly) NSArray *dailyForecast;
+
+// 4
+- (void)findCurrentLocation;
+
 
 @end
