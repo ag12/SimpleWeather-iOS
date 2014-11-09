@@ -49,7 +49,6 @@
 }
 
 + (NSDictionary *) JSONKeyPathsByPropertyKey {
-
     return @{
              @"date": @"dt",
              @"locationName": @"name",

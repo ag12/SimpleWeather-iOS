@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface WXController : UIViewController <UITableViewDataSource, UITableViewDelegate, UIScrollViewDelegate>
-
+@property (nonatomic, strong) NSDateFormatter *hourlyFormatter;
+@property (nonatomic, strong) NSDateFormatter *dailyFormatter;
 @end

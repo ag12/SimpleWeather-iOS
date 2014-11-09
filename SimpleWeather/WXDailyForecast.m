@@ -15,6 +15,9 @@
     NSMutableDictionary *paths = [[super JSONKeyPathsByPropertyKey] mutableCopy];
     paths[@"tempHigh"] = @"temp.max";
     paths[@"tempLow"] = @"temp.min";
+    paths[@"humidity"] = @"humidity";
+    paths[@"locationName"] = @"main.city.name";
+    paths[@"temperature"] = @"temp.day";
     return paths;
 }
 

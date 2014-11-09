@@ -14,15 +14,16 @@
 
 @interface WXManager : NSObject <CLLocationManagerDelegate>
 
-+ (instancetype)shredManager;
-
-@property (nonatomic, strong, readonly) CLLocation *currantLocation;
-@property (nonatomic, strong, readonly) WXCondition *currentCondition;
-@property (nonatomic, strong, readonly) NSArray *hourlyForecast;
-@property (nonatomic, strong, readonly) NSArray *dailyForecast;
-
-// 4
++ (instancetype)sharedManager;
 - (void)findCurrentLocation;
 
+@property (nonatomic, strong) CLLocation *currentLocation;
+@property (nonatomic, strong) WXCondition *currentCondition;
+@property (nonatomic, strong) NSArray *hourlyForecast;
+@property (nonatomic, strong) NSArray *dailyForecast;
 
+
+- (RACSignal *)updateCurrentCondition;
+- (RACSignal *)updateHourlyForecast;
+- (RACSignal *)updateDailyForecast;
 @end
