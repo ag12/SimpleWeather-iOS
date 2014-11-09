@@ -99,9 +99,6 @@
 -(RACSignal *)updateDailyForecast {
     
     return [[self.client fetchDailyForecastForLocation:self.currentLocation.coordinate] doNext:^(NSArray *conditions) {
-        for (int i = 0; i < [conditions count]; i++) {
-            NSLog(@"%@", conditions[i]);
-        }
         self.dailyForecast = conditions;
     }];
 }
